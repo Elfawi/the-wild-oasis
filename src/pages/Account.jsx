@@ -5,15 +5,25 @@ import UpdatePasswordForm from "../features/authentication/UpdatePasswordForm";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
+import styled from "styled-components";
+const AccountContainer = styled.div`
+  max-width: 120rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+`;
 function Account() {
   const ref = useRef();
-  useGSAP(()=>{
-    gsap.fromTo(ref.current,
-      {y:-400,opacity:0 , scale:0.5}
-      ,{duration:0.5,y:0,opacity:1,scale:1})
-  },[ref.current])
+  useGSAP(() => {
+    gsap.fromTo(
+      ref.current,
+      { y: -400, opacity: 0, scale: 0.5 },
+      { duration: 0.5, y: 0, opacity: 1, scale: 1 }
+    );
+  }, [ref.current]);
   return (
-    <div ref={ref}>
+    <AccountContainer ref={ref}>
       <Heading as="h1">Update your account</Heading>
 
       <Row>
@@ -25,7 +35,7 @@ function Account() {
         <Heading as="h3">Update password</Heading>
         <UpdatePasswordForm />
       </Row>
-    </div>
+    </AccountContainer>
   );
 }
 

@@ -42,7 +42,7 @@ function TodayActivity() {
   const { activities, isLoading } = useTodayActivity();
   return (
     <StyledToday>
-      <Row type="horizontal">a
+      <Row type="horizontal">
         <Heading as="h2">Today</Heading>
       </Row>
       {!isLoading ? (

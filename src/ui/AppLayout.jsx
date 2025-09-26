@@ -17,7 +17,7 @@ const StyledAppLayout = styled.div`
   @media (max-width: 1100px) {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    /* gap: 2rem; */
   }
 `;
 

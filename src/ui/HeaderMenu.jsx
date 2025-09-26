@@ -21,9 +21,7 @@ function HeaderMenu() {
   return (
     <StyledHeaderMenu>
       <li>
-        <MobileNavButton
-          onClick={() => setIsMobileNavActive((prev) => !prev)}
-        />
+        <DarkModeToggle />
       </li>
       <li>
         <ButtonIcon onClick={() => navigate("/account")}>
@@ -31,10 +29,12 @@ function HeaderMenu() {
         </ButtonIcon>
       </li>
       <li>
-        <DarkModeToggle />
+        <Logout />
       </li>
       <li>
-        <Logout />
+        <MobileNavButton
+          onClick={() => setIsMobileNavActive((prev) => !prev)}
+        />
       </li>
     </StyledHeaderMenu>
   );

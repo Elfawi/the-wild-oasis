@@ -14,7 +14,9 @@ const StyledAppLayout = styled.div`
   grid-template-columns: 26rem 1fr;
   grid-template-rows: auto 1fr;
   @media (max-width: 1100px) {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 `;
 

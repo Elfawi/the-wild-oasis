@@ -5,9 +5,9 @@ const StyledMain = styled.main`
   padding: 4rem 4.8rem 6.4rem; // top left & right bottom
   background-color: var(--color-grey-50);
   overflow-y: scroll;
-  @media (max-width: 1100px) {
+  /* @media (max-width: 1100px) {
     padding: 2rem 2.8rem 3.4rem;
-  }
+  } */
   @media (max-width: 900px) {
     padding: 1rem 1.8rem 2.4rem;
   }

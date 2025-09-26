@@ -12,7 +12,7 @@ function BookingTable() {
   if (!bookings?.length) return <Empty resourceName="bookings" />;
   return (
     <Menus>
-      <Table columns="0.3fr minmax(10rem,2fr) minmax(5rem,2.4fr) 1fr 1fr 1.2rem">
+      <Table columns="0.3fr minmax(6rem,2fr) minmax(5rem,2.4fr) 1fr 1fr 2.2rem">
         <Table.Header>
           <div>Cabin</div>
           <div>Guest</div>

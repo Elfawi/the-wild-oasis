@@ -4,11 +4,13 @@ import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 import { useSignup } from "./useSignup";
-import { HiEye } from "react-icons/hi2";
-import { HiEyeOff } from "react-icons/hi";
 import { useState } from "react";
 import SpinnerMini from "../../ui/SpinnerMini";
-
+import ShowPasswordEye from "../../ui/ShowPasswordEye";
+import styled from "styled-components";
+const StyledInput = styled.div`
+  position: relative;
+`;
 // Email regex: /\S+@\S+\.\S+/
 // /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
 
@@ -18,14 +20,6 @@ function SignupForm() {
   const { signup, isLoading } = useSignup();
   const { register, handleSubmit, formState, getValues, reset } = useForm();
   const { errors } = formState;
-
-  function togglePasswordVisibility() {
-    setShowPassword((show) => !show);
-  }
-  function toggleConfrimPasswordVisibility() {
-    setShowConfirmPassword((show) => !show);
-  }
-
   function onSubmit({ fullName, email, password }) {
     signup(
       { fullName, email, password },
@@ -63,7 +57,7 @@ function SignupForm() {
         label="Password (min 8 characters)"
         error={errors?.password?.message}
       >
-        <>
+        <StyledInput>
           <Input
             {...register("password", {
               required: "This field is required",
@@ -76,25 +70,16 @@ function SignupForm() {
             id="password"
             disabled={isLoading}
           />
-          <span
-            style={{
-              cursor: "pointer",
-              position: "absolute",
-              right: "40%",
-              top: "22px",
-            }}
-          >
-            {showPassword ? (
-              <HiEyeOff size={18} onClick={togglePasswordVisibility} />
-            ) : (
-              <HiEye size={18} onClick={togglePasswordVisibility} />
-            )}
-          </span>
-        </>
+          <ShowPasswordEye
+            showPassword={showPassword}
+            setShowPassword={setShowPassword}
+            id="password"
+          />
+        </StyledInput>
       </FormRow>
 
       <FormRow label="Repeat password" error={errors?.passwordConfirm?.message}>
-        <>
+        <StyledInput>
           <Input
             {...register("passwordConfirm", {
               required: "This field is required",
@@ -105,21 +90,13 @@ function SignupForm() {
             id="passwordConfirm"
             disabled={isLoading}
           />
-          <span
-            style={{
-              cursor: "pointer",
-              position: "absolute",
-              right: "40%",
-              top: "22px",
-            }}
-          >
-            {showConfirmPassword ? (
-              <HiEyeOff size={18} onClick={toggleConfrimPasswordVisibility} />
-            ) : (
-              <HiEye size={18} onClick={toggleConfrimPasswordVisibility} />
-            )}
-          </span>
-        </>
+
+          <ShowPasswordEye
+            showPassword={showConfirmPassword}
+            setShowPassword={setShowConfirmPassword}
+            id="passwordConfirm"
+          />
+        </StyledInput>
       </FormRow>
 
       <FormRow>

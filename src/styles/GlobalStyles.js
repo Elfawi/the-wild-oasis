@@ -181,5 +181,17 @@ img {
 
   /* For dark mode */
   filter: grayscale(var(--image-grayscale)) opacity(var(--image-opacity));
-}`;
+}
+
+@media (max-width: 1100px) {
+  html{
+    font-size: 56.5%;
+  }
+}
+@media (max-width: 900px) {
+  html{
+    font-size: 50%;
+  }
+}
+`;
 export default GlobalStyles;

@@ -8,6 +8,12 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+  @media (max-width: 1100px) {
+    gap: 2.4rem;
+  }
+  @media (max-width: 800px) {
+    gap: 1.2rem;
+  }
 `;
 
 export default function Container({ children }) {

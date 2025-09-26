@@ -5,6 +5,7 @@ const Input = styled.input`
   background: var(--color-grey-0);
   border-radius: var(--border-radius-sm);
   padding: 0.8rem 1.2rem;
+  width: 100%;
   box-shadow: var(--shadow-sm);
 `;
 

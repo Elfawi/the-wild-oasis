@@ -5,19 +5,19 @@ import styled from "styled-components";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef } from "react";
+import { MobileNavProvider } from "../context/MobileNavContext";
+import Main from "./Main";
 
 const StyledAppLayout = styled.div`
   display: grid;
   height: 100vh;
   grid-template-columns: 26rem 1fr;
   grid-template-rows: auto 1fr;
+  @media (max-width: 1100px) {
+    display: block;
+  }
 `;
 
-const Main = styled.main`
-  padding: 4rem 4.8rem 6.4rem; // top left & right bottom
-  background-color: var(--color-grey-50);
-  overflow-y: scroll;
-`;
 // const Container = styled.div`
 //   max-width: 120rem;
 //   margin: 0 auto;
@@ -36,13 +36,15 @@ function AppLayout() {
   }, [ref.current]);
   return (
     <StyledAppLayout ref={ref}>
-      <Header />
-      <Sidebar />
-      <Main>
-        {/* <Container> for GSAP animation purpose I commented it out  */}
-        <Outlet />
-        {/* </Container> */}
-      </Main>
+      <MobileNavProvider>
+        <Header />
+        <Sidebar />
+        <Main>
+          {/* <Container> for GSAP animation purpose I commented it out  */}
+          <Outlet />
+          {/* </Container> */}
+        </Main>
+      </MobileNavProvider>
     </StyledAppLayout>
   );
 }

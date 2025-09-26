@@ -15,8 +15,8 @@ import Spinner from "../../ui/Spinner";
 import { useCheckout } from "../check-in-out/useCheckout";
 import { useDeleteBooking } from "./useDeleteBooking";
 import Modal from "../../ui/Modal";
-import ConfirmDelete from "../../ui/ConfirmDelete";
 import Empty from "../../ui/Empty";
+import ConfirmAction from "../../ui/ConfirmAction";
 
 const HeadingGroup = styled.div`
   display: flex;
@@ -80,8 +80,19 @@ function BookingDetail() {
             </Button>
           </Modal.Open>
           <Modal.Window name="delete">
-            <ConfirmDelete
+            {/* <ConfirmDelete
               resourceName="booking"
+              disabled={isDeleting}
+              onConfirm={() =>
+                deleteBooking(bookingId, {
+                  onSettled: () => navigate(-1),
+                })
+              }
+            /> */}
+            <ConfirmAction
+              type="delete"
+              title="Delete booking"
+              message="Are you sure you want to delete this booking permanently? This action cannot be undone."
               disabled={isDeleting}
               onConfirm={() =>
                 deleteBooking(bookingId, {

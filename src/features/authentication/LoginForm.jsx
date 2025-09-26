@@ -5,7 +5,11 @@ import Input from "../../ui/Input";
 import FormRowVertical from "../../ui/FormRowVertical";
 import { useLogin } from "../authentication/useLogin";
 import SpinnerMini from "../../ui/SpinnerMini";
-import { HiEye, HiEyeOff } from "react-icons/hi";
+import ShowPasswordEye from "../../ui/ShowPasswordEye";
+import styled from "styled-components";
+const StyledInput = styled.div`
+  position: relative;
+`;
 function LoginForm() {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -26,9 +30,7 @@ function LoginForm() {
       }
     );
   }
-  function togglePasswordVisibility() {
-    setShowPassword((show) => !show);
-  }
+
   return (
     <Form onSubmit={handleSubmit}>
       <FormRowVertical label="Email address">
@@ -43,7 +45,7 @@ function LoginForm() {
         />
       </FormRowVertical>
       <FormRowVertical label="Password">
-        <>
+        <StyledInput>
           <Input
             type={showPassword ? "text" : "password"}
             id="password"
@@ -52,21 +54,12 @@ function LoginForm() {
             onChange={(e) => setPassword(e.target.value)}
             disabled={isLoading}
           />
-          <span
-            style={{
-              cursor: "pointer",
-              position: "absolute",
-              right: "10px",
-              top: "51px",
-            }}
-          >
-            {showPassword ? (
-              <HiEyeOff size={18} onClick={togglePasswordVisibility} />
-            ) : (
-              <HiEye size={18} onClick={togglePasswordVisibility} />
-            )}
-          </span>
-        </>
+          <ShowPasswordEye
+            id="show-password-login"
+            showPassword={showPassword}
+            setShowPassword={setShowPassword}
+          />
+        </StyledInput>
       </FormRowVertical>
       <FormRowVertical>
         <Button disabled={isLoading} size="large">

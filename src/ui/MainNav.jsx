@@ -7,7 +7,7 @@ import {
   HiOutlineHomeModern,
   HiOutlineUsers,
 } from "react-icons/hi2";
-
+import { useMobileNav } from "../context/MobileNavContext";
 const NavList = styled.ul`
   display: flex;
   flex-direction: column;
@@ -54,8 +54,9 @@ const StyledNavLink = styled(NavLink)`
 `;
 
 function MainNav() {
+  const { setIsMobileNavActive } = useMobileNav();
   return (
-    <nav>
+    <nav onClick={() => setIsMobileNavActive(false)}>
       <NavList>
         <li>
           <StyledNavLink to="/dashboard">

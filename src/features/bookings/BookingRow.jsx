@@ -18,8 +18,8 @@ import {
 import { useCheckout } from "../check-in-out/useCheckout";
 import { useDeleteBooking } from "./useDeleteBooking";
 import Modal from "../../ui/Modal";
-import ConfirmDelete from "../../ui/ConfirmDelete";
 import BookingForm from "./BookingForm";
+import ConfirmAction from "../../ui/ConfirmAction";
 
 const Cabin = styled.div`
   font-size: 1.6rem;
@@ -39,7 +39,7 @@ const Stacked = styled.div`
 
   & span:last-child {
     color: var(--color-grey-500);
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
   }
 `;
 
@@ -135,8 +135,15 @@ function BookingRow({
           </Menus.List>
         </Menus.Menu>
         <Modal.Window name="delete">
-          <ConfirmDelete
+          {/* <ConfirmDelete
             resourceName="booking"
+            disabled={isDeleting}
+            onConfirm={() => deleteBooking(bookingId)}
+          /> */}
+          <ConfirmAction
+            type="delete"
+            title="Delete booking"
+            message="Are you sure you want to delete this booking permanently? This action cannot be undone."
             disabled={isDeleting}
             onConfirm={() => deleteBooking(bookingId)}
           />

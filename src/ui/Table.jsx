@@ -8,6 +8,10 @@ const StyledTable = styled.div`
   background-color: var(--color-grey-0);
   border-radius: 7px;
   overflow: hidden;
+  @media (max-width: 1100px) {
+    grid-column: 1/-1;
+    grid-row: auto; // for dashboard
+  }
 `;
 
 const CommonRow = styled.div`
@@ -16,6 +20,9 @@ const CommonRow = styled.div`
   column-gap: 2.4rem;
   align-items: center;
   transition: none;
+  @media (max-width: 600px) {
+    column-gap: 2rem;
+  }
 `;
 
 const StyledHeader = styled(CommonRow)`
@@ -27,6 +34,11 @@ const StyledHeader = styled(CommonRow)`
   letter-spacing: 0.4px;
   font-weight: 600;
   color: var(--color-grey-600);
+  @media (max-width: 800px) {
+    padding: 0.8rem 1.2rem;
+    letter-spacing: 0.2px;
+    font-size: 1.2rem;
+  }
 `;
 
 const StyledRow = styled(CommonRow)`
@@ -34,6 +46,15 @@ const StyledRow = styled(CommonRow)`
 
   &:not(:last-child) {
     border-bottom: 1px solid var(--color-grey-100);
+  }
+  @media (max-width: 800px) {
+    /* font-size: 1.4rem; */
+  }
+  @media (max-width: 600px) {
+    font-size: 1.2rem;
+  }
+  @media (max-width: 500px) {
+    font-size: 1rem;
   }
 `;
 
@@ -50,6 +71,9 @@ const Footer = styled.footer`
   /* This will hide the footer when it contains no child elements. Possible thanks to the parent selector :has 🎉 */
   &:not(:has(*)) {
     display: none;
+  }
+  @media (max-width: 600px) {
+    font-size: 1rem;
   }
 `;
 

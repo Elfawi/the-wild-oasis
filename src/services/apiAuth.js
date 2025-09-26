@@ -65,3 +65,10 @@ export async function updateCurrentUser({ password, fullName, avatar }) {
   if (updateUserError) throw new Error(updateUserError.message);
   return updatedUser;
 }
+
+// export async function getAllUsers() {
+//   const { data, error } = await supabase.auth.admin.listUsers(); // only for supabase admins
+//   if (error) throw new Error(error.message);
+//   console.log(data);
+//   return data;
+// }

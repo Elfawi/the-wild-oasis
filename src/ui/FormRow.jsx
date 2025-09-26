@@ -7,13 +7,20 @@ const StyledFormRow = styled.div`
   gap: 2.4rem;
   position: relative; // for eye
   padding: 1.2rem 0;
+  justify-content: space-between;
   @media (max-width: 800px) {
     grid-template-columns: 10rem 40rem;
+    /* grid-template-columns: 24rem 1fr 1.2fr; */
   }
   @media (max-width: 600px) {
     /* grid-template-columns: 10rem 25rem; */
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    align-items: flex-start;
+    &:has(label) {
+      flex-direction: column;
+      width: 100%;
+    }
   }
   &:first-child {
     padding-top: 0;
@@ -21,6 +28,10 @@ const StyledFormRow = styled.div`
 
   &:last-child {
     padding-bottom: 0;
+    padding-top: 2.4rem;
+    @media (max-width: 600px) {
+      justify-content: center;
+    }
   }
 
   &:not(:last-child) {

@@ -10,6 +10,7 @@ import ShowPasswordEye from "../../ui/ShowPasswordEye";
 import styled from "styled-components";
 const StyledInput = styled.div`
   position: relative;
+  width: 100%;
 `;
 function UpdatePasswordForm() {
   const [showPassword, setShowPassword] = useState(false);

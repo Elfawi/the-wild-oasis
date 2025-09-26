@@ -14,6 +14,9 @@ const StyledContainer = styled.div`
   @media (max-width: 800px) {
     gap: 1.2rem;
   }
+  @media (max-width: 600px) {
+    height: 100vh;
+  }
 `;
 
 export default function Container({ children }) {

@@ -10,6 +10,7 @@ import ShowPasswordEye from "../../ui/ShowPasswordEye";
 import styled from "styled-components";
 const StyledInput = styled.div`
   position: relative;
+  width: 100%;
 `;
 // Email regex: /\S+@\S+\.\S+/
 // /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/

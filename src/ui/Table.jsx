@@ -21,7 +21,7 @@ const CommonRow = styled.div`
   align-items: center;
   transition: none;
   @media (max-width: 600px) {
-    column-gap: 2rem;
+    column-gap: 1rem;
   }
 `;
 
@@ -52,9 +52,6 @@ const StyledRow = styled(CommonRow)`
   }
   @media (max-width: 600px) {
     font-size: 1.2rem;
-  }
-  @media (max-width: 500px) {
-    font-size: 1rem;
   }
 `;
 

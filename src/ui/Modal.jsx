@@ -51,10 +51,11 @@ const Button = styled.button`
   & svg {
     width: 2.4rem;
     height: 2.4rem;
-    /* Sometimes we need both */
-    /* fill: var(--color-grey-500);
-    stroke: var(--color-grey-500); */
     color: var(--color-grey-500);
+    @media (max-width: 800px) {
+      width: 3.4rem;
+      height: 3.4rem;
+    }
   }
 `;
 

@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 const Row = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   ${(props) =>
     props.type === "horizontal" &&
     css`
